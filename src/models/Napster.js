@@ -63,8 +63,8 @@ export function Napster(window, $, JSON) {
     // ### Initialization Options
     // Set your developer key and application ID here.  You can also (optionally) specify which API and catalog versions you prefer.
     init: function (options) {
-      this.api.consumerKey = 'ZTk2YjY4MjMtMDAzYy00MTg4LWE2MjYtZDIzNjJmMmM0YTdm';
-      API_KEY = 'ZTk2YjY4MjMtMDAzYy00MTg4LWE2MjYtZDIzNjJmMmM0YTdm';
+      this.api.consumerKey = '';
+      API_KEY = '';
       this.api.version = options.version || this.api.version;
       this.api.catalog = options.catalog || this.api.catalog;
 
