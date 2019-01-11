@@ -1,0 +1,1 @@
+export const napsterApiKey = 'ZDA1NWFkYzUtM2ZhOS00MTQ3LTkxZWYtYTYzY2M2OTlkYjEx'
