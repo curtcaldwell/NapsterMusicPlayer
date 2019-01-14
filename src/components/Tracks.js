@@ -32,10 +32,13 @@ class Tracks extends Component {
         refreshToken: this.props.refreshToken
       })
 
+      Napster.player.on('playevent', (e) => {
+        console.log('event data: ', e.data)
+      })
+
       Napster.api.get(true, '/tracks/top', (data) => {
         console.log('data: ', data)
         Napster.player.clearQueue()
-
         this.props.loadTracks({
           tracks: data.tracks
         })

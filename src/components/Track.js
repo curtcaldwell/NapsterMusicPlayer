@@ -1,11 +1,62 @@
 /* globals Napster */
 /* eslint-disable filenames/match-regex */
+import Button from '@material-ui/core/Button'
 import React from 'react'
 import PropTypes from 'prop-types'
 import ImmutablePropTypes from 'react-immutable-proptypes'
 import { connect } from 'react-redux'
 
 import { AppContext } from '../context/app'
+const artistStyle = {
+  border: 'solid',
+  fontSize: '80px'
+}
+
+const songStyle = {
+  border: 'solid',
+  fontSize: '45px'
+}
+
+const playTimeStyle = {
+  border: 'solid',
+  fontSize: '30px'
+}
+
+const ControlUI = (track, id) => {
+  return (
+    <div id='parent'>
+
+      <div>
+
+        <Button variant='contained' size='medium' color='primary'>
+          Next
+        </Button>
+
+        <Button variant='contained' size='medium' color='primary'>
+          Previous
+        </Button>
+
+        <Button variant='contained' size='medium' color='primary'>
+          Clear
+        </Button>
+        <Button variant='contained' size='medium' color='primary'>
+          Repeat
+        </Button>
+        <Button variant='contained' size='medium' color='primary'>
+          Shuffle
+        </Button>
+        <Button variant='contained' size='medium' color='primary'>
+          Pause
+        </Button>
+        <Button variant='contained' size='medium' color='primary'>
+          Resume
+        </Button>
+
+      </div>
+
+    </div>
+  )
+}
 
 const Track = ({ track, onClick }) => (
   <button
@@ -18,19 +69,15 @@ const Track = ({ track, onClick }) => (
     <div className='track-info'>
       <div className='progress-bar' />
 
-      <div className='name'>
+      <div style={songStyle} className='name'>
         { track.get('name') }
       </div>
 
-      <div className='artist'>
+      <div style={artistStyle} className='artist'>
         { track.get('artistName') }
       </div>
 
-      <div className='duration'>
-        { Napster.util.secondsToTime(track.get('playbackSeconds')) }
-      </div>
-      
-      <div className='current-time'>
+      <div style={playTimeStyle} className='duration'>
         { Napster.util.secondsToTime(track.get('playbackSeconds')) }
       </div>
     </div>
@@ -69,4 +116,4 @@ export default connect(
   {
     context: AppContext
   }
-)(Track)
+)(Track, ControlUI)

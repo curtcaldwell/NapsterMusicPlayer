@@ -1,12 +1,21 @@
+/* globals Napster */
 import React from 'react'
 import Button from '@material-ui/core/Button'
-// import IconButton from '@material-ui/core/IconButton'
-// import AddIcon from '@material-ui/icons/Add'
-// import FastRewind from '@material-ui/icons/FastRewind'
-// import DeleteIcon from '@material-ui/icons/Delete'
-// import Napster from '../models/Napster'
-// import FlashPlayer from '../models/Flash_player'
-// import Html5Player from '../models/Html5_player'
+
+const PauseButton = () => {
+  Napster.player.pause()
+  console.log()
+}
+
+const PlayButton = () => {
+  Napster.player.resume()
+  console.log('playing')
+}
+
+const NextButton = () => {
+  Napster.player.next()
+  console.log('hello')
+}
 
 const ControlUI = (props) => {
   return (
@@ -14,7 +23,7 @@ const ControlUI = (props) => {
 
       <div>
 
-        <Button variant='contained' size='medium' color='primary'>
+        <Button onClick={NextButton} variant='contained' size='medium' color='primary'>
           Next
         </Button>
 
@@ -25,16 +34,11 @@ const ControlUI = (props) => {
         <Button variant='contained' size='medium' color='primary'>
           Clear
         </Button>
-        <Button variant='contained' size='medium' color='primary'>
-          Repeat
-        </Button>
-        <Button variant='contained' size='medium' color='primary'>
-          Shuffle
-        </Button>
-        <Button variant='contained' size='medium' color='primary'>
+        
+        <Button onClick={PauseButton} variant='contained' size='medium' color='primary'>
           Pause
         </Button>
-        <Button variant='contained' size='medium' color='primary'>
+        <Button onClick={PlayButton} variant='contained' size='medium' color='primary'>
           Resume
         </Button>
 
