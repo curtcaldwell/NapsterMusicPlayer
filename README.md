@@ -9,7 +9,7 @@ The music player includes these features:
 - Authentication allowing only signed in users access to the content
 - Access to 100s of thousands of songs with album art
 - The ability to have multiple songs lined up to play one after another
-- Abilty to search for newest songs released everyday
+- Ability to search for newest songs released everyday
 
 ### Version
 
