@@ -45,7 +45,7 @@
     "@babel/plugin-transform-react-jsx": "7.2.0",
     "@babel/preset-env": "^7.2.3",
     "acorn": "6.0.5",
-    "ajv": "6.6.2",
+    "ajv": "6.12.3",
     "babel-eslint": "9.0.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-named-asset-import": "^0.3.0",
